@@ -197,6 +197,10 @@ model.fit(x_train, y_train)
 
 predictions = model.predict(x_test)
 
+from sklearn.metrics import f1_score
+f1 = f1_score(y_test, predictions)
+print(f"Model F1 Skoru: {f1:.2f}")
+
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(y_test, predictions)
 print(f"Model Accuracy: %{accuracy * 100:.2f}")

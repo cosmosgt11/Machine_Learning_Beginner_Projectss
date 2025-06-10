@@ -1,0 +1,94 @@
+Titanic Hayatta Kalma Tahmini
+
+
+## 🌟 Proje Genel Bakışı
+Bu proje, Titanic veri seti'ni kullanarak Titanik gemisi kazasında yolcuların hayatta kalma olasılığını tahmin etmek amacıyla geliştirilmiştir. 
+Makine öğrenmesi algoritmaları kullanarak yolcu özelliklerine (cinsiyet, yaş, sınıf vb.) dayalı tahminler yapılmaktadır.
+
+**Ana Hedefler:**
+- Veri setini kapsamlı bir şekilde keşfetmek (EDA).
+- Tahmin yeteneğini artırmak için yeni özellikler (feature engineering) oluşturmak.
+- Çeşitli ML modellerini eğitmek ve performanslarını değerlendirmek.
+- En iyi performans gösteren modeli belirlemek ve hayatta kalma faktörlerini analiz etmek.
+
+## 📊 Veri Seti
+Bu projede kullanılan veri seti, Kaggle'dan [https://www.kaggle.com/datasets/yasserh/titanic-dataset] alınmıştır. Veri seti aşağıdaki ana sütunları içermektedir:
+- `PassengerId`: Yolcu kimliği
+- `Survived`: Hayatta kalma durumu (0 = Hayır, 1 = Evet)
+- `Pclass`: Bilet sınıfı (1. Sınıf, 2. Sınıf, 3. Sınıf)
+- `Name`: Yolcu adı
+- `Sex`: Cinsiyet
+- `Age`: Yaş
+- `SibSp`: Gemideki kardeş / eş sayısı
+- `Parch`: Gemideki ebeveyn / çocuk sayısı
+- `Ticket`: Bilet numarası
+- `Fare`: Yolcu ücreti
+- `Cabin`: Kabin numarası
+- `Embarked`: Biniş limanı
+
+## ✨ Özellik Mühendisliği
+Projenin EDA aşamasında, tahmin performansını artırmak için aşağıdaki yeni özellikler oluşturulmuştur:
+- `family_size`: `SibSp` ve `Parch` sütunlarından türetilen ailedeki toplam üye sayısı.
+- `title`: `Name` sütunundan çıkarılan yolcunun ünvanı (örn: Mr., Miss., Mrs., Master.).
+- `solo`: Yolcunun yalnız seyahat edip etmediğini gösteren ikili bir özellik (1 = Yalnız, 0 = Aile ile).
+- `Cabin_sec`: Kabin bilgilerinden çıkarılan kabin güvertesi (örn: A, B, C...).
+
+## 📈 Keşifçi Veri Analizi (EDA)
+Ana bulgular şunlardır:
+- Cinsiyetin hayatta kalma oranları üzerinde en belirgin etkiye sahip olduğu gözlemlenmiştir (Kadınların hayatta kalma oranı erkeklere göre önemli ölçüde yüksektir).
+- 1. Sınıf yolcuların hayatta kalma olasılığı diğer sınıflara göre daha yüksektir.
+- Yaş dağılımının hayatta kalma üzerinde etkisi bulunmaktadır, özellikle çocukların hayatta kalma oranı daha yüksektir.
+- Ücret ile hayatta kalma arasında pozitif bir korelasyon vardır.
+- Unvan (`title`) özelliğinin yaş tahminlerinde ve hayatta kalma analizinde önemli olduğu gösterilmiştir.
+- Aile büyüklüğü (`family_size`) ile hayatta kalma arasında belirli bir ilişki vardır; çok küçük veya çok büyük ailelerin hayatta kalma oranı düşüktür.
+
+**Ana Görselleştirmeler:**
+- Cinsiyete göre hayatta kalma oranı grafiği.
+- Yolcu sınıfına göre hayatta kalma oranı grafiği.
+- Yaş ve Ücret dağılımları ile hayatta kalma ilişkisi.
+- Oluşturulan yeni özelliklerin (örn: `title`, `family_size`, `solo`) hayatta kalma üzerindeki etkileri.
+
+## 🤖 Model Seçimi ve Eğitimi
+Aşağıdaki ML modeli kullanılarak tahminler yapılmıştır:
+- RandomForestClassifier
+
+
+
+## 📊 Değerlendirme Sonuçları
+Modellerin performansları, F1-Score, Hassasiyet (Precision), Duyarlılık (Recall) ve ROC Eğrisi gibi metrikler kullanılarak değerlendirilmiştir. En iyi performans gösteren model [Model Adı, örn: Random Forest] olmuştur.
+
+**Model Performansı:**
+- **Doğruluk (Accuracy): 83.24%
+- **F1-Score:** 0.80%
+- **ROC AUC:** 0.90
+
+![ROC Eğrisi](https://github.com/cosmosgt11/Machine_Learning_Beginner_Projectss/blob/main/Survival_Prediction_with_Titanic_Dataset/visualizations/model_results/ROC%20curve.png)
+
+## 📋 Bağımlılıklar
+Bu proje için gerekli Python kütüphaneleri `requirements.txt` dosyasında listelenmiştir:
+- `pandas`
+- `numpy`
+- `scikit-learn`
+- `matplotlib`
+- `seaborn`
+- `jupyter`
+## 🔮 Gelecek İyileştirmeler
+- Daha fazla özellik mühendisliği (örn: sosyoekonomik durum, aile ilişkileri).
+- Gelişmiş model ayarlaması (hyperparameter tuning) için GridSearchCV/RandomizedSearchCV kullanımı.
+- Derin öğrenme modelleri (örn: yapay sinir ağları) ile denemeler.
+- Model yorumlanabilirliği (örn: SHAP, LIME) araçlarını kullanarak tahminlerin nedenlerini daha iyi anlamak.
+
+## 👋 Katkıda Bulunma
+Bu projeye katkıda bulunmaktan çekinmeyin! Her türlü iyileştirme önerisi veya hata düzeltmesi memnuniyetle karşılanır. Lütfen bir pull request göndermeden önce bir issue oluşturun.
+
+## 📄 Lisans
+Bu proje MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için (LICENSE) dosyasına bakın.
+
+## 📧 İletişim
+Sorularınız veya geri bildirimleriniz için benimle iletişime geçebilirsiniz:
+- **ibrahim halil ceyran**
+- **GitHub: (https://github.com/cosmosgt11)
+- **LinkedIn: (www.linkedin.com/in/ibrahim-halil-ceyran564223)
+- **E-posta: (cyrn35@gmail.com)
+
+---

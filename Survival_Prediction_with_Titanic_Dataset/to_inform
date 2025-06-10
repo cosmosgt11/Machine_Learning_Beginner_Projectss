@@ -52,11 +52,8 @@ Ana bulgular şunlardır:
 Aşağıdaki ML modeli kullanılarak tahminler yapılmıştır:
 - RandomForestClassifier
 
-
-
 ## 📊 Değerlendirme Sonuçları
 Modellerin performansları, F1-Score, Hassasiyet (Precision), Duyarlılık (Recall) ve ROC Eğrisi gibi metrikler kullanılarak değerlendirilmiştir. En iyi performans gösteren model [Model Adı, örn: Random Forest] olmuştur.
-
 **Model Performansı:**
 - **Doğruluk (Accuracy): 83.24%
 - **F1-Score:** 0.80%
@@ -71,12 +68,6 @@ Bu proje için gerekli Python kütüphaneleri `requirements.txt` dosyasında lis
 - `scikit-learn`
 - `matplotlib`
 - `seaborn`
-- `jupyter`
-## 🔮 Gelecek İyileştirmeler
-- Daha fazla özellik mühendisliği (örn: sosyoekonomik durum, aile ilişkileri).
-- Gelişmiş model ayarlaması (hyperparameter tuning) için GridSearchCV/RandomizedSearchCV kullanımı.
-- Derin öğrenme modelleri (örn: yapay sinir ağları) ile denemeler.
-- Model yorumlanabilirliği (örn: SHAP, LIME) araçlarını kullanarak tahminlerin nedenlerini daha iyi anlamak.
 
 ## 👋 Katkıda Bulunma
 Bu projeye katkıda bulunmaktan çekinmeyin! Her türlü iyileştirme önerisi veya hata düzeltmesi memnuniyetle karşılanır. Lütfen bir pull request göndermeden önce bir issue oluşturun.
